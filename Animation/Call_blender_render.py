@@ -8,7 +8,7 @@ import os
 files = os.listdir('.')
 blend_files = []
 
-# filter trough current folder and check if the name ".blend " is in there.
+# filter trough current folder and check if the name ".blend " is in there. ASD
 for file in files:
     if ".blend" in file:
         blend_files.append(file)
