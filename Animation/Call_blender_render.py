@@ -4,6 +4,7 @@
 #
 
 import os
+
 # Grab all files from current directory
 files = os.listdir('.')
 blend_files = []
@@ -12,3 +13,5 @@ blend_files = []
 for file in files:
     if ".blend" in file:
         blend_files.append(file)
+
+print(blend_files)
