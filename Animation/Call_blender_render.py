@@ -15,18 +15,14 @@ blend_files = []
 for file in files:
     if ".blend" in file:
         if file[-1] == "1":
-            print("deleted " + file)
+            continue
         else:
             blend_files.append(file)
 
-        # Need remove all files that end with .blend1 somehow
+# Printing all blend files in current blend_file list of render
+print(blend_files)
 
-print("blender " + blend_files[0] + " --python Blender_Render.py")
-
-
+# Calling consol on each blend file to call Blender_render.py
 for file in blend_files:
     subprocess.call("blender " + file +
                     " --python Blender_Render.py", shell=True)
-
-
-print(blend_files)

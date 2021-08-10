@@ -13,7 +13,7 @@ for area in bpy.context.screen.areas:
                 space.overlay.show_overlays = False
                 break
 # Could have also done this if only 1 window open
-# area.spaces[0].overlay.show_overlays
+# area.spaces[0].overlay.show_overlays = False
 
 # Changing output to mp4
 bpy.context.scene.render.image_settings.file_format = 'FFMPEG'
@@ -23,14 +23,13 @@ bpy.context.scene.render.ffmpeg.format = 'MPEG4'
 # getting the blender file number
 file_number = bpy.path.basename(bpy.context.blend_data.filepath)[-8:-6]
 
-# Creating file output based on Blockout number
-# This is how it was:
+# Creating folder and file output based on Blockout number
 bpy.data.scenes[0].render.filepath = "//Preview/" + \
     "/" + str(file_number) + "_"
 
 
-# Check when this finshed, then write boolean true.
+# Calling blender to preview render the file
 bpy.ops.render.opengl(write_still=True, animation=True)
 
-# When finished, exit file and check if blend process is running.
+# When finished, exit.
 exit()
