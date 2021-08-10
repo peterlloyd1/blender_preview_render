@@ -24,8 +24,9 @@ for file in files:
 print("blender " + blend_files[0] + " --python Blender_Render.py")
 
 
-# subprocess.call(
-#    "blender " + blend_files[0] + " --python Blender_Render.py", shell=True)
+for file in blend_files:
+    subprocess.call("blender " + file +
+                    " --python Blender_Render.py", shell=True)
 
 
 print(blend_files)
